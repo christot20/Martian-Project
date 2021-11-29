@@ -2,9 +2,11 @@ import tkinter as tk
 import sys
 import time
 
+#add gui and do research on ASCII
+
 messageArray = []
 letArray = []
-allowed_characters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','(',')','$','%','_','/', ' ', ".", "!", ",", ":", "?","'",";","-","+","*"]
+allowed_characters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','(',')','$','%','_','/', ' ', ".", "!", ",", ":", "?","'",";","-","+","*",">","<","#","&","}","{","]","[",",","^","|","`","_"]
 hex_allowed_chars=["1","2","3","4","5","6","7","8", "9", "A","a","B","b","C","c","D","d","E","e","F","f"]
 time.sleep(2)
 print("Initializing...")
@@ -16,7 +18,7 @@ time.sleep(1)
 print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n")
 time.sleep(2)
 print("You shouldn't have numbers from 1-1F or anything higher than 7F: ")
-#add a delete feature for the writing of letters using pop function
+
 def hex_to_words():
     while True:
         hex_num = input("Enter a Hex Number Watney: ")
