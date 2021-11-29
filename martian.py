@@ -15,7 +15,7 @@ print("Hey Watney! Nice of you to try and communicate with us.")
 time.sleep(2)
 print("The commands are:" +"\n")
 time.sleep(1)
-print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n")
+print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n"+"Help: Shows list of commands."+"\n")
 time.sleep(2)
 print("You shouldn't have numbers from 1-1F or anything higher than 7F: ")
 
@@ -43,7 +43,7 @@ def hex_to_words():
         elif hex_num.lower() == "del":
             letArray.pop()
         elif hex_num.lower() == "help":
-            print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n")
+            print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n"+"Help: Shows list of commands."+"\n")
         else:
             if len(hex_num) <= 2:
                 if any(x not in hex_allowed_chars for x in hex_num):
