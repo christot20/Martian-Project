@@ -22,17 +22,14 @@ print("You shouldn't have numbers from 1-1F or anything higher than 7F: ")
 def hex_to_words():
     while True:
         hex_num = input("Enter a Hex Number Watney: ")
-        print(hex_num)
         if hex_num.lower() == "stop":
             print("Program shutting down...")
             sys.exit()
         elif hex_num.lower() == "end":
-            print(hex_num)
             message = "".join(letArray)
             messageArray.append(message)
             letArray.clear()
             print(messageArray)
-            print(letArray)
             hex_to_words()  
         elif hex_num.lower() == "reset":
             messageArray.clear()
@@ -50,7 +47,7 @@ def hex_to_words():
                     print("error: invalid number")
                     hex_to_words()
                 letter = chr((int(hex_num,16)))
-                print(letter)
+                #print(letter)
                 if any(x not in allowed_characters for x in letter):
                     print("error: invalid number")
                     hex_to_words()
