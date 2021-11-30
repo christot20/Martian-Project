@@ -23,6 +23,7 @@ def hex_to_words():
     while True:
         hex_num = input("Enter a Hex Number Watney: ")
         if hex_num.lower() == "stop":
+            time.sleep(1)
             print("Program shutting down...")
             time.sleep(2)
             sys.exit()
