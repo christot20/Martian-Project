@@ -24,11 +24,14 @@ def hex_to_words():
         hex_num = input("Enter a Hex Number Watney: ")
         if hex_num.lower() == "stop":
             print("Program shutting down...")
+            time.sleep(2)
             sys.exit()
         elif hex_num.lower() == "end":
             message = "".join(letArray)
             messageArray.append(message)
             letArray.clear()
+            if message == "":
+                messageArray.pop()
             print(messageArray)
             hex_to_words()  
         elif hex_num.lower() == "reset":
