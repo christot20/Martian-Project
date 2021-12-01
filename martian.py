@@ -1,13 +1,10 @@
-import tkinter as tk
 import sys
 import time
-
-#add gui and do research on ASCII
 
 messageArray = []
 letArray = []
 allowed_characters=['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z','A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z','1','2','3','4','5','6','7','8','9','0','(',')','$','%','_','/', ' ', ".", "!", ",", ":", "?","'",";","-","+","*",">","<","#","&","}","{","]","[",",","^","|","`","_"]
-hex_allowed_chars=["1","2","3","4","5","6","7","8", "9", "A","a","B","b","C","c","D","d","E","e","F","f"]
+hex_allowed_chars=["0","1","2","3","4","5","6","7","8", "9", "A","a","B","b","C","c","D","d","E","e","F","f"]
 time.sleep(2)
 print("Initializing...")
 time.sleep(2)
@@ -15,7 +12,7 @@ print("Hey Watney! Nice of you to try and communicate with us.")
 time.sleep(2)
 print("The commands are:" +"\n")
 time.sleep(1)
-print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n"+"Help: Shows list of commands."+"\n")
+print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n"+"Help: Shows list of commands."+"\n"+"Send: Sends message to NASA."+"\n")
 time.sleep(2)
 print("You shouldn't have numbers from 1-1F or anything higher than 7F: ")
 
@@ -39,6 +36,15 @@ def hex_to_words():
             messageArray.clear()
             letArray.clear()
             hex_to_words()
+        elif hex_num.lower() == "send":
+            print("Message Sending...")
+            time.sleep(2)
+            print("Please Wait...")
+            time.sleep(1.5)
+            print("Message Received!")
+            messageArray.clear()
+            letArray.clear()
+            hex_to_words()
         elif hex_num.lower() == "sentence":
             print(" ".join(messageArray))
         elif hex_num.lower() == "del":
@@ -48,12 +54,11 @@ def hex_to_words():
         else:
             if len(hex_num) <= 2:
                 if any(x not in hex_allowed_chars for x in hex_num):
-                    print("error: invalid number")
+                    print("ERROR: Invalid Number")
                     hex_to_words()
                 letter = chr((int(hex_num,16)))
-                #print(letter)
                 if any(x not in allowed_characters for x in letter):
-                    print("error: invalid number")
+                    print("ERROR: Invalid Number")
                     hex_to_words()
                 else:
                     letArray.append(letter)
