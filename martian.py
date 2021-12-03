@@ -12,7 +12,7 @@ print("Hey Watney! Nice of you to try and communicate with us.")
 time.sleep(2)
 print("The commands are:" +"\n")
 time.sleep(1)
-print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n"+"Help: Shows list of commands."+"\n"+"Send: Sends message to NASA."+"\n")
+print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n"+"Help: Shows list of commands."+"\n"+"Send: Sends message to NASA."+"\n"+"Table: Displays Hex to Char numbers."+"\n")
 time.sleep(2)
 print("You shouldn't have numbers from 1-1F or anything higher than 7F: ")
 
@@ -49,6 +49,16 @@ def hex_to_words():
             print(" ".join(messageArray))
         elif hex_num.lower() == "del":
             letArray.pop()
+        elif hex_num.lower() == "table":
+            for c in range(32, 128, 16):
+                print('chr:',end="")
+                for c1 in range(c, c+16):
+                    print('%4s'%chr(c1), end=" ")
+                print()
+                print('asc:',end="")
+                for c2 in range(c, c+16):
+                    print('%4s'%hex(c2), end=" ")
+                print()
         elif hex_num.lower() == "help":
             print("Stop: Shuts down program." + "\n"+"Reset: Clears past letters and words."+"\n"+"End: Combines letters to make word."+"\n"+"Sentence: Takes words to formulate message."+"\n"+"Del: Backspace."+"\n"+"Help: Shows list of commands."+"\n")
         else:
